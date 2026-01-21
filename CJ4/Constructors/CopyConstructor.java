@@ -8,7 +8,7 @@ public class CopyConstructor {
     private String employeeCompany;
 
     CopyConstructor(String name, String company) {
-        employeeName = name;
+        employeeName = name;        // I am not using this keyword since there is no ambiguity involved (members and parameters have different names)
         employeeCompany = company;
     }
 

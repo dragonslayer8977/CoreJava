@@ -1,7 +1,7 @@
 package Constructors;
 
 // used to restrict the create of multiple instances for a class
-// used in utilities only if the class contains static methods aand members
+// used in utilities only if the class contains static methods and members
 
 public class PrivateConstructors {
 
