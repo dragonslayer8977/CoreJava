@@ -1,0 +1,22 @@
++---------------------------------------------------+
+|                  Association                      |
+|       General relationship ("knows-a")            |
+|                                                   |
+|   +-------------------------------------------+   |
+|   |               Aggregation                 |   |
+|   |   Special type of association ("has-a")   |   |
+|   |   Weak ownership, independent lifecycle   |   |
+|   |                                           |   |
+|   |   +-----------------------------------+   |   |
+|   |   |            Composition            |   |   |
+|   |   |     Strong type of aggregation    |   |   |
+|   |   |           ("part-of")             |   |   |
+|   |   | Strong ownership, lifecycle bound |   |   |
+|   |   +-----------------------------------+   |   |
+|   +-------------------------------------------+   |
++---------------------------------------------------+
+
+
+
+                    Association -------> Aggregation -------> Composition
+                            (Specialized form)      (Strong form)
