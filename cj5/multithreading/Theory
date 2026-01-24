@@ -1,0 +1,58 @@
+
+process: an independently running program
+    - process is isolated from other processes.
+    - has it's own memory
+thread: a lightweight unit of this independently running program(process)
+    - runs simultaneously along with other threads
+    - access the shared memory of the process
+
+
+                                                  THREAD LIFE CYCLE
+
+                                                  CPU scheduled
+                                    start()           by JVM           run()
+                                new ------> Runnable -------> Running -------> terminated
+                                                ^     yield()     /
+                                                \                /
+                                  notify()       \              /    wait()
+                                  notifyAll()     \            /    sleep()
+                                  resume()         \          v     suspend()
+                                                     sleeping
+                                                     (or)
+                                                     waiting
+                                                     (or)
+                                                     blocked
+
+
+1. new: Thread object created but not started (new Thread())
+
+2. Runnable: Thread is ready but waiting for resources (start())
+
+3. Running: Thread is actually running(i.e., executing) meaning resources has been allocated to the thread since CPU scheduler picked that thread
+
+4. Waiting: Thread runs indefinitely until other thread notifies it using notify(), notifyAll()
+
+5. Timed waiting: Thread waits for a specific period of time (sleep(), join(), wait())
+
+6. Blocked: Thread will be in blocked state when it is trying to acquire a lock (currently acquired by other thread)
+
+7. Terminated: Thread is said to be terminated if it completes it's execution or there is an occurrence of an unhandled exception or error
+
+
+
+Methods in Thread class
+
+- start(): starts the new thread of execution(internally calls run() method)
+- run(): the code that the thread executes(). calling this method directly does not create a thread, just executes like a normal method call
+- join(): makes the thread wait until other thread is executed(i.e., terminated)
+- sleep(): pauses the thread execution for a given period of time
+- interrupt(): interrupts a thread in waiting or sleeping state, sets the interrupt call
+- isAlive(): checks the running status of the thread("true" if thread is started and "false" if the thread is terminated)
+- getName(): returns the name of the thread
+- setName(): sets the name of the thread
+- getPriority(): gets the priority of the thread
+- setPriority(): sets the priority of the thread (min_priority: 1 to max_priority: 10)
+- currentThread(): returns a reference to the currently running thread
+- getState(): returns the current state of the thread (NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED)
+- holdsLock(Object obj): checks if the current thread holds a lock on the given object
+- yield(): temporarily pause the execution of the current thread to allow for other threads to execute
