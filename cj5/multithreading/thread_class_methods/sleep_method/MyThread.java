@@ -1,4 +1,4 @@
-package multithreading.threadclassmethods.sleep;
+package multithreading.thread_class_methods.sleep_method;
 
 public class MyThread extends Thread {
 
@@ -14,7 +14,9 @@ public class MyThread extends Thread {
 
         try{
 
-            Thread.sleep(2000);
+            Thread.sleep(2000); // sleep() pauses the execution of the current running thread for a specified period of time,
+            // since it is a static method it only affects the current running thread and also does not release any locks
+            // sleep() throws InterruptedException
 
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -1,6 +1,6 @@
-package multithreading.threadclassmethods;
+package multithreading.thread_creation.threadclass;
 
-public class MyThread extends Thread{
+public class MyThread extends Thread {
 
     String threadName;
 
@@ -26,7 +26,7 @@ public class MyThread extends Thread{
         }
     }
 
-    static void main() throws InterruptedException {
+    static void main() {
 
         MyThread thread01 = new MyThread("thread01");
         MyThread thread02 = new MyThread("thread02");
@@ -34,21 +34,11 @@ public class MyThread extends Thread{
         MyThread thread04 = new MyThread("thread04");
         MyThread thread05 = new MyThread("thread05");
 
-        thread01.start(); // creates new thread and calls the run method internally
-//        thread02.run(); // executes the code immediately no thread involved
+        thread01.start();
         thread02.start();
         thread03.start();
         thread04.start();
         thread05.start();
-
-        thread01.join();
-        thread02.join();
-        thread03.join();
-        thread04.join();
-        thread05.join();
-
-        System.out.println("completely executed!!"); // without thread.join() this statement will execute immediately i.e., first
-
-
     }
+
 }

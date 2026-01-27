@@ -1,3 +1,6 @@
+package conditional_statements;
+
+
 public class IfStatement {
     public static void main(String[] args) {
         String name = "mahesh";

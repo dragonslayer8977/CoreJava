@@ -1,17 +1,18 @@
-package multithreading.threadcreation.threadclass;
+package multithreading.thread_creation.runnableinterface;
 
-public class MyThread extends Thread {
+public class MyThread implements Runnable {
 
     String threadName;
 
     MyThread(String threadName) {
         this.threadName = threadName;
-
     }
+
     @Override
     public void run() {
         printSomething();
     }
+
 
     public void printSomething() {
 
@@ -28,17 +29,17 @@ public class MyThread extends Thread {
 
     static void main() {
 
-        MyThread thread01 = new MyThread("thread01");
-        MyThread thread02 = new MyThread("thread02");
-        MyThread thread03 = new MyThread("thread03");
-        MyThread thread04 = new MyThread("thread04");
-        MyThread thread05 = new MyThread("thread05");
+        Thread thread01 = new Thread(new MyThread("thread01"));
+        Thread thread02 = new Thread(new MyThread("thread02"));
+        Thread thread03 = new Thread(new MyThread("thread03"));
+        Thread thread04 = new Thread(new MyThread("thread04"));
+        Thread thread05 = new Thread(new MyThread("thread05"));
 
-        thread01.start();
+        thread01.start();  // creates the thread and calls run() internally
+        thread01.run();  // this will run the code instantly like a method call so this is not a thread
         thread02.start();
         thread03.start();
         thread04.start();
         thread05.start();
     }
-
 }

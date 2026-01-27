@@ -1,6 +1,6 @@
 package interfaces.functional_interface;
 
-// functional interfaces is an interface that has only one method
+// functional interfaces is an interface that has only one abstract method
 
 public interface Student {
 

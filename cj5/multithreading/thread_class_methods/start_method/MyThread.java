@@ -1,4 +1,4 @@
-package multithreading.threadclassmethods.start;
+package multithreading.thread_class_methods.start_method;
 
 // creates new thread and calls the "run" method internally to run the code
 
@@ -13,7 +13,6 @@ public class MyThread extends Thread {
 
     @Override
     public void run() {
-
 
         System.out.println(this.threadName + " execution started....");
         for (int i = 0; i < 5; i++) {

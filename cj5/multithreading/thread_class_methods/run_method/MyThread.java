@@ -1,4 +1,4 @@
-package multithreading.threadclassmethods.run;
+package multithreading.thread_class_methods.run_method;
 
 // run method contains the code the needs to executed inside the thread
 
@@ -26,7 +26,7 @@ public class MyThread extends Thread{
         MyThread t3 = new MyThread("t3");
         MyThread t4 = new MyThread("t4");
 
-        t1.run(); // this is not multithreading, this is just plain method calling
+        t1.run(); // this is not multithreading, this is just plain method calling on the main thread
         t2.run();
         t3.run();
         t4.run();

@@ -5,6 +5,14 @@ process: an independently running program
 thread: a lightweight unit of this independently running program(process)
     - runs simultaneously along with other threads
     - access the shared memory of the process
+lock(object's monitor): a lock is a mechanism that ensures that only one thread can access the shared resources at any give time, this prevents data inconsistency
+thread starving: a condition where the thread is in runnable state, but waits for resources indefinitely because higher priority thread use those resources.
+deadlock: a condition where the threads wait for resources indefinitely. below four conditions must be true for a deadlock to occur
+    - only one thread can use the resource at a time
+    - a thread is holding resource and waiting for remaining resources which are held by other thread
+    - resources cannot be taken away from a long running thread by force
+    - a chain of threads where one thread holds some resources and is waiting for another threads to release those resource and
+      this forms a cycle where no thread releases their resources and waits indefinitely
 
 
                                                   THREAD LIFE CYCLE
@@ -47,6 +55,8 @@ Methods in Thread class
 - join(): makes the thread wait until other thread is executed(i.e., terminated)
 - sleep(): pauses the thread execution for a given period of time
 - interrupt(): interrupts a thread in waiting or sleeping state, sets the interrupt call
+- isInterrupted(): checks the interrupted flag of the target thread
+- interrupted(): static method that checks the current thread interrupt flag and clears it.
 - isAlive(): checks the running status of the thread("true" if thread is started and "false" if the thread is terminated)
 - getName(): returns the name of the thread
 - setName(): sets the name of the thread
@@ -56,3 +66,28 @@ Methods in Thread class
 - getState(): returns the current state of the thread (NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED)
 - holdsLock(Object obj): checks if the current thread holds a lock on the given object
 - yield(): temporarily pause the execution of the current thread to allow for other threads to execute
+
+
+
+DIFFERENCE BETWEEN start, run, sleep, wait, join
+
+start: creates a new thread and calls run method implicitly.
+run: run method contains the code that needs to be executed inside a thread
+sleep: pauses the execution of a thread for a set period of time
+wait: stops the execution of the thread, release lock and make that thread wait until another thread notifies it
+join: makes the called thread wait for the execution of target thread
+
+
+
+Object class methods:
+
+- wait(): causes the current thread to wait indefinitely
+        until another thread call notify() or notifyAll() and releases lock
+- wait(long timeout): causes the thread to wait for specified time(milliseconds) and release lock
+- wait(long timeout, int nanos): similar to previous but added precision of nanoseconds
+- notify(): wakes up or notifies only one thread that is currently waiting for the lock(the thread is chosen by JVM randomly).
+    - the thread that was notified does not run immediately it moves from waiting to blocked state and waits until it can get the lock
+    - must be called on the synchronized block or synchronized methods on the same object.
+- notifyAll(): notifies all threads that are in the waiting state and moves them to blocked state
+    - blocked threads wait for lock and only one thread at a time can get the lock and execute
+    - must be used inside synchronized block or synchronized method

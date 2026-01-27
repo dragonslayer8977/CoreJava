@@ -9,7 +9,7 @@ public class StaticBlock {
     // if there is no static keyword even then the code executes correctly but then this block will be called as "initializer block"(executes for every object created)
     static {    // This block will only execute once by the JVM when the class is being loaded into the memory(even before any object creation) so executed even before main method
                 // or object creation
-        age = 21;// belongs to class no object since static
+        age = 21;// belongs to class not object since static
         System.out.println("Hey look I don't need main method anymore!"); // this statement was true before JDK -v 1.6
         System.out.println("Just Kidding bruh!");
     }

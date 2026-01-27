@@ -2,7 +2,7 @@ package final_keyword;
 
 // final class cannot be extended
 public final class FinalClass {
-    // final variable - once assigned the value cannot be changed (becomes immutable)
+    // final variable - once assigned the value cannot be changed (becomes immutable constants)
     public final double PI = 3.14;
 
     public final void doSomething() { // final methods cannot be overridden but can be overloaded as below
@@ -29,7 +29,7 @@ public final class FinalClass {
 
 //class Test extends FinalClass { // This will not work since class is final
 //
-//    public void doSomething() { // This will not work since doSomething is final so it cannot be overridden
+//    public void doSomething() { // This will not work since doSomething is final so it cannot be overridden but can be overloaded
 //        System.out.println("doing new things....");
 //    }
 //}

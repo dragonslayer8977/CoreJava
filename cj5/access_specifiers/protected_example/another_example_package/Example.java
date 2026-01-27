@@ -6,7 +6,7 @@ public class Example {
 
     public void userMethod() {
 
-//        new ProtectedClass().doSomething(); // This won't work since we are inside a different package and we are not the subclass of the "ProtectedClass"
+//        new ProtectedClass().doSomething(); // This won't work since we are inside a different package and "Example" is not the subclass of the "ProtectedClass"
     }
 
 }
