@@ -1,7 +1,7 @@
 package packagexample.packagecreate;
 
 // Packages enable us to write reusable code, avoid naming conflicts and make code more readable and maintainable
-
+// packages are created using "package" keyword and are generally named using reverse file path since every file path is unique
 
 public class Utilities {
     public void printMsg(String msg) {
@@ -11,6 +11,7 @@ public class Utilities {
     public String concatenate(String s1, String s2) {
         return s1 + s2;
     }
+
 
     public int asciiAddition(String s) {
         char[] ch = s.toCharArray();

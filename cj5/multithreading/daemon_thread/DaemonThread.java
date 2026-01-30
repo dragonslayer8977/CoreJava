@@ -1,5 +1,8 @@
 package multithreading.daemon_thread;
 
+// daemon thread is a background running thread which provides services to other thread and does not stop the termination of the JVM.
+// so even if multiple daemon threads are running the JVM will still exit and terminates those threads
+
 public class DaemonThread extends Thread{
 
     @Override
@@ -17,7 +20,7 @@ public class DaemonThread extends Thread{
 
     static void main() {
         DaemonThread t1 = new DaemonThread();
-        t1.setDaemon(true);
+        t1.setDaemon(true); // sets t1 as a daemon thread
         t1.start();
         System.out.println("Main thread started execution...");
         try{
