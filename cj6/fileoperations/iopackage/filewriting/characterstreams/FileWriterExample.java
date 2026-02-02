@@ -10,7 +10,7 @@ public class FileWriterExample {
 
     public static void main(String[] args) {
 
-        try(FileWriter fw = new FileWriter ("cj6\\fileoperations\\examplefolder\\example.txt", true)) { // writes characters directly to the file. if file is not present then will automatically create the file, generally used for large text write operations
+        try(FileWriter fw = new FileWriter ("cj6\\fileoperations\\examplefolder\\example.txt", true)) { // writes characters directly to the file. if file is not present then will automatically create the file, generally used for text write operations
 
             String inputStr = """ 
                     {

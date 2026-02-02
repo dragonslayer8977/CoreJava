@@ -1,11 +1,10 @@
 package map_interface;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
-// Map does not extend Collecion
+
+// Map does not extend Collecion interface it is a separate interface that is a part of Java Collections framework
 // Map generally hold <key, value> pairs
 // keys should be unique and each key can hold atmost one value
 
@@ -47,7 +46,7 @@ public class HashMapUsage {
 
 //        map.clear (); // clears the entire map
 
-        map.putIfAbsent ("rakesh", 21); // inserts the key-value pair if the key doesnot exist
+        map.putIfAbsent ("rakesh", 21); // inserts the key-value pair if the key does not exist
 
         map.getOrDefault ("suresh", 21); // returns the value of the key if specified and if the key is absent the default specified value is returned
 

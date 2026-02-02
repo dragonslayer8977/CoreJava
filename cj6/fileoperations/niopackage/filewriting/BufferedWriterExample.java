@@ -22,7 +22,7 @@ public class BufferedWriterExample {
                     """;
             String cmtStr = "// This is the comment statement...";
             bw.write (str);
-            bw.newLine (); // creates a new empty line
+            bw.newLine (); // creates a new empty line similar to System.out.println()
             bw.write (cmtStr);
 
         } catch (IOException e) {

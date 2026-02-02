@@ -1,12 +1,11 @@
 package strings;
 
-public class StringBuilderExample {
+public class StringBufferExample {
 
-    // StringBuilder is used to modify the string in Java without creating a new object each time it is modified
+    // StringBuffer is similar to StringBuilder but is thread safe hence slower than StringBuilder
 
     public static void main(String[] args) {
-
-        java.lang.StringBuilder sb = new StringBuilder ("mahesh");
+        StringBuffer sb = new StringBuffer ();
         sb.append ("intern"); // adds
         sb.charAt (4);
         sb.setCharAt (5, 'z');
@@ -15,6 +14,5 @@ public class StringBuilderExample {
         sb.toString ();
         sb.deleteCharAt (3);
         sb.insert (6, "techouts");
-
     }
 }

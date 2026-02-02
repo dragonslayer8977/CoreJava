@@ -3,11 +3,10 @@ package list_interface;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 
 // Collection is the root interface represents a group of objects
-// this interface extends(since both are interfaces) another interface called Iterable
+// this Collection interface extends(since both are interfaces) another interface called Iterable
 // the Collection interface provide abstract methods like add, remove, size, iterator, contains etc...
 // List, Set, Queue/Deque
 

@@ -18,6 +18,7 @@ public class ReadAllLinesExample {
             for(String line: actualText) {
 
                 System.out.println (line);
+
             }
 
         } catch (IOException e) {

@@ -14,7 +14,7 @@ public class HashSetUsage {
     static void main(String[] args) {
         Set<Integer> set = new HashSet<> ();
         // HashSet implements Set interface
-        // HashSet uses hashCode() first then use equals() hence the name hashset
+        // HashSet uses hashCode() first then use equals() to check of duplicates hence the name hashset
         // HashSets are best for finding out if an element exists (constant time) and also for adding and removing elements
 
         set.add (3); // adds an element if not present. returns true if the element is added otherwise false i.e., element already exists

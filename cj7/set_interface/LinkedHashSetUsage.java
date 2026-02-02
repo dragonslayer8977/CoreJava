@@ -11,7 +11,7 @@ public class LinkedHashSetUsage {
 
         // LinkedHashSet extends HashSet
         // maintains the insertion order
-        // internally uses hash table and doubly linkedlist
+        // internally uses hash table and doubly linked list
 
         set.add (34);
         set.add (3);

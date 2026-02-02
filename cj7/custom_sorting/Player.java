@@ -1,4 +1,4 @@
-package comparable_usage;
+package custom_sorting;
 
 // Comparable interface is used to define the natural order of the objects of a class
 // defines how the objects of same class should be ordered
@@ -13,10 +13,14 @@ public class Player implements Comparable<Player>{
 
     String name;
     int performanceScore;
+    int age;
+    char gender;
 
-    Player(String name, int performanceScore) {
+    Player(String name, int performanceScore, int age, char gender) {
         this.name = name;
         this.performanceScore = performanceScore;
+        this.age = age;
+        this.gender = gender;
     }
 
     public void printPlayer() {

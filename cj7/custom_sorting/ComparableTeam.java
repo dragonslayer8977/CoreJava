@@ -1,20 +1,20 @@
-package comparable_usage;
+package custom_sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class Team {
+public class ComparableTeam {
 
     public static void main(String[] args) {
 
         List<Player> playerList = new ArrayList<> ();
 
-        playerList.add(new Player ("ronaldo", 99));
-        playerList.add(new Player ("messi", 99));
-        playerList.add(new Player ("Mbappe", 100));
-        playerList.add(new Player ("nemor", 98));
+        playerList.add(new Player ("ronaldo", 99, 54, 'm'));
+        playerList.add(new Player ("messi", 99, 55, 'm'));
+        playerList.add(new Player ("Mbappe", 100, 65, 'm'));
+        playerList.add(new Player ("nemor", 98, 47, 'm'));
 
         Iterator<Player> i = playerList.iterator ();
 

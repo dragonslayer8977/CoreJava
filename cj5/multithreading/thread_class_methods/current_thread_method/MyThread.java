@@ -16,6 +16,7 @@ public class MyThread extends Thread{
         } catch (InterruptedException e) {
             System.err.println(e);
         }
+
     }
 
     static void main() {
@@ -30,6 +31,7 @@ public class MyThread extends Thread{
         // the thread that creates a new thread will always pass it's priority to child thread
         System.out.println("is the currently running thread interrupted: " + Thread.currentThread().isInterrupted()); // check the interrupted flag of the thread
         System.out.println(holdsLock(thread01)); // checks if the specified thread object has any locks
+        System.out.println (thread01.getState ());
 
     }
 }

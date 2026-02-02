@@ -6,7 +6,7 @@ public class HashTableUsage {
 
     public static void main(String[] args) {
         Hashtable<String, Integer> map = new Hashtable<> (2);
-        // HashMap are inherently thread safe
+        // HashTables are inherently thread safe
         // similar to HashMap where key is converted to hashcode
         // does not allow null values
 

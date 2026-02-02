@@ -38,7 +38,7 @@ deadlock: a condition where the threads wait for resources indefinitely. below f
 
 3. Running: Thread is actually running(i.e., executing) meaning resources has been allocated to the thread since CPU scheduler picked that thread
 
-4. Waiting: Thread runs indefinitely until other thread notifies it using notify(), notifyAll()
+4. Waiting: Thread execution stops indefinitely until other thread notifies it using notify(), notifyAll()
 
 5. Timed waiting: Thread waits for a specific period of time (sleep(), join(), wait())
 
