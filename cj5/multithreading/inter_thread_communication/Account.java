@@ -42,9 +42,19 @@ public class Account implements Runnable {
 
         Account a01 = new Account();
 
-        Thread t1 = new Thread(() -> a01.withdraw(3000));
+        Thread t1 = new Thread (new Runnable () {
+            @Override
+            public void run() {
+                a01.withdraw(3000);
+            }
+        });
         t1.setName("withdraw_thread");
-        Thread t2 = new Thread(() -> a01.deposit(10000));
+        Thread t2 = new Thread (new Runnable () {
+            @Override
+            public void run() {
+                a01.deposit(10000); // using anonymous classes
+            }
+        });
         t2.setName("deposit_thread");
 
 
