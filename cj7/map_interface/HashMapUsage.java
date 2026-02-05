@@ -50,7 +50,7 @@ public class HashMapUsage {
 
         map.getOrDefault ("suresh", 21); // returns the value of the key if specified and if the key is absent the default specified value is returned
 
-        map.computeIfAbsent ("suresh", k -> new Integer (21)); // this(new Integer(int i) is deprecated since Java 9 but if the key doesnot exists then the give expression is executed
+        map.computeIfAbsent ("suresh", k ->Integer.valueOf (21)); // this(new Integer(int i) is deprecated since Java 9 but if the key doesnot exists then the give expression is executed
 
         for(Map.Entry<String, Integer> e : map.entrySet ()) {
 

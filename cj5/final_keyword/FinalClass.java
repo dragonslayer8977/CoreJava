@@ -20,7 +20,8 @@ public final class FinalClass {
         System.out.println(obj.PI);
 
 //        obj.PI = 69; // this will work since PI is a final member of the class so essentially it is immutable
-
+        System.out.println("doing new things....");
+//    }
         obj.doSomething();
         obj.doSomething("String");
     }
@@ -30,6 +31,5 @@ public final class FinalClass {
 //class Test extends FinalClass { // This will not work since class is final
 //
 //    public void doSomething() { // This will not work since doSomething is final so it cannot be overridden but can be overloaded
-//        System.out.println("doing new things....");
-//    }
+//
 //}

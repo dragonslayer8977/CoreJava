@@ -1,6 +1,6 @@
 package multithreading.inter_thread_communication;
 
-public class Account implements Runnable {
+public class Account {
 
     int balance = 0;
 
@@ -13,13 +13,14 @@ public class Account implements Runnable {
 
     public synchronized void withdraw(int amount) {
 
-        if (balance < amount) {
+        while (balance < amount) { // why not if condition because the wait() can might wakeup automatically (spurious wakeups) so everytime the thread wake up we check the condition again and again
             try {
                 System.out.println("waiting for deposit...");
                 System.out.println("Thread " + Thread.currentThread().getName() + " is waiting");
                 wait();
             } catch (InterruptedException e) {
                 System.err.println(e);
+                return;
             }
         }
 
@@ -29,16 +30,8 @@ public class Account implements Runnable {
 
     }
 
-    @Override
-    public void run() {
-        while (Thread.currentThread().isAlive()) {
-            System.out.println(Thread.currentThread().getName() + " started running...");
-        }
 
-        System.out.println(Thread.currentThread().getName() + " stopped!!!");
-    }
-
-    static void main() throws InterruptedException {
+    public static void main() throws InterruptedException {
 
         Account a01 = new Account();
 
@@ -49,6 +42,7 @@ public class Account implements Runnable {
             }
         });
         t1.setName("withdraw_thread");
+
         Thread t2 = new Thread (new Runnable () {
             @Override
             public void run() {
@@ -59,7 +53,7 @@ public class Account implements Runnable {
 
 
         t1.start();
-//        t1.join();  // This will cause
+//        t1.join();  // This will cause a deadlock like situation where "withdraw_thread" is in waiting state and main thread waits for "withdraw_thread" to complete its execution so "deposit_thread" is never started
         t2.start();
 
         t1.join();

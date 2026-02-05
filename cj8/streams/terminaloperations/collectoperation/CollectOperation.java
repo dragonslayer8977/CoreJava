@@ -22,8 +22,8 @@ public class CollectOperation {
                 .parallel ()
                 .collect(
                         ArrayList::new, // supplier (creates a new ArrayList)
-                        List::add, // accumulator (adds the elements to the new ArrayList)
-                        List::addAll // combiner (combines the part of the ArrayList into a single collection)
+                        ArrayList::add, // accumulator (adds the elements to the new ArrayList)
+                        ArrayList::addAll // combiner (combines the part of the ArrayList into a single collection)
 
                 );
 
